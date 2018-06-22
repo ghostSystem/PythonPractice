@@ -42,6 +42,7 @@ class BinaryTree():
 		else:
 			self._display(self.root)
 
+
 	def _display(self, curr_node):
 		if curr_node != None:
 			self._display(curr_node.left)
@@ -49,8 +50,24 @@ class BinaryTree():
 			self._display(curr_node.right)
 
 
+	def search(self, data):
+		if self.root == None:
+			print("BinaryTree is empty !")
+		else:
+			if self._search(self.root, data):
+				print("Element Found !")
+			else:
+				print("Element Not Found !")
 
 
+	def _search(self, curr_node, data):
+		if data == curr_node.data:
+			return True
+		elif data < curr_node.data and curr_node.left:
+			return self._search(curr_node.left, data)
+		elif data > curr_node.data and curr_node.right:
+			return self._search(curr_node.right, data)
+		return False
 
 
 
