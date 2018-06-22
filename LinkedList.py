@@ -23,7 +23,7 @@ class LinkedList():
 
 	def display(self):
 		if self.head == None:
-			print("Linked List empty !")
+			print("LinkedList empty !")
 		else:
 			curr = self.head
 			print("\nThe LinkedList:")
@@ -31,3 +31,21 @@ class LinkedList():
 				print("{} -> ".format(curr.data), end = "")
 				curr = curr.next
 			print("None\n")
+
+
+	def search(self, data):
+		if self.head == None:
+			print("LinkedList empty !")
+		else:
+			flag = 0
+			curr = self.head
+			while curr:
+				if data == curr.data:
+					flag = 1
+					print("Element Found !")
+					break
+				curr = curr.next
+			if flag == 0:
+				print("Element not found !")
+
+
